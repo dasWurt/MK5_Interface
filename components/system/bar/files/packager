@@ -1,0 +1,10 @@
+#!/bin/bash
+
+INFUSION=$1
+
+mkdir -p /sd/tmp/
+touch /sd/tmp/packager.status
+cd /pineapple/components/infusions/
+tar -pczhf /sd/tmp/$INFUSION.tar.gz $INFUSION
+
+rm /sd/tmp/packager.status

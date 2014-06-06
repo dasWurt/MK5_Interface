@@ -1,0 +1,4 @@
+#!/bin/bash
+touch /tmp/installing_upgrade
+sleep 5
+sysupgrade -n /tmp/upgrade.bin

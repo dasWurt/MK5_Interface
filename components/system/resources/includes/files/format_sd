@@ -1,0 +1,40 @@
+#!/bin/bash
+#2013 - WiFiPineapple.com
+
+[[ -f /tmp/sd_format.progress ]] && {
+  exit 0
+}
+
+#Function to find and reset the SD device
+function reset_sd {
+  DEVICE=$(find / -name idProduct -exec grep -l 6366 {} + | awk -F '/' '{ print $(NF-1) }')
+  echo $DEVICE  > /sys/bus/usb/drivers/usb/unbind
+  sleep 2
+  echo $DEVICE  > /sys/bus/usb/drivers/usb/bind
+}
+
+
+touch /tmp/sd_format.progress
+
+reset_sd
+sleep 5
+
+umount /sd
+swapoff /dev/sdcard/sd2
+
+sleep 2
+cat /pineapple/components/system/resources/includes/files/fdisk_instructions | fdisk /dev/sdcard/sd
+sleep 2
+
+umount /sd
+mkfs.ext4 /dev/sdcard/sd1
+sleep 2
+mkfs.ext4 /dev/sdcard/sd2
+
+
+mkswap /dev/sdcard/sd2
+
+mount /dev/sdcard/sd1 /sd
+swapon /dev/sdcard/sd2
+
+rm /tmp/sd_format.progress

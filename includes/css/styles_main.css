@@ -1,0 +1,235 @@
+.statusBar {
+  text-align: center;
+
+  margin: 0 auto;
+  padding: 2px;
+  width: 95%;
+  min-height: 1.2em;
+
+  border: 3px solid green;
+}
+
+.statusBar_content {
+  display: inline;
+}
+
+.logout {
+  display: inline;
+  float: right;
+  padding-right: 5px;
+}
+
+.logout img {
+  width: 2.9em;
+  height: 1.3em;
+}
+
+.tiles {
+  text-align: center;
+  width: 100%;
+  margin-top: 2%;
+  height: 90%;
+  overflow: auto;
+}
+
+.tiles_wrapper {
+  display: inline;
+  margin: 0 auto;
+  overflow-y: auto;
+  height: 100%;
+  text-align: center;
+  min-height: 250px;
+}
+
+.tiles_wrapper_seperator {
+  display: inline-block;
+  overflow: auto;
+  width: 77%;
+  height: 100%;
+}
+
+.side_bar {
+  float: left;
+  display: inline-block;
+  height: 100%;
+  width: 22%;
+  border: 1px solid red;
+}
+
+.tile {
+  text-align: left;
+  margin: 1%;
+
+  vertical-align: top;
+  display: inline-block;
+
+  width: 22%;
+  min-width: 280px;
+  height: 250px;
+  height: 30%;
+  overflow: hidden;
+
+  border: 3px solid green;
+}
+
+.tile_title {
+  text-align: center;
+  text-decoration: underline;
+  padding-bottom: 5px;
+  cursor: pointer;
+  background: green; /*#186018*/
+  width: 100%;
+}
+
+.tile_title_wrapper {
+  text-align: center;
+  text-decoration: underline;
+  padding-bottom: 5px;
+  background: green; /*#186018*/
+  width: 100%;
+}
+
+.tile_remove {
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
+  padding-right: 3px;
+}
+
+.refresh {
+  max-height: 2em;
+  max-width: 2em;
+  background-image: url(/includes/img/refresh.png);
+  background-position: center left;
+  padding-left: 1.4em;
+  background-size: 1.3em, 1.3em;
+  background-repeat: no-repeat;
+}
+
+.tile_expanded {
+  margin: auto;
+  text-align: left;
+  color: white;
+  background: black;
+
+  position: absolute;
+  right: -50%;
+  left: -50%;  
+  border: 3px solid green;
+  width: 93.25%;
+  height: 85%;
+  z-index: 99;
+  /*padding: 10px;*/
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  visibility: hidden;
+}
+
+.tile_content {
+  padding: 10px;
+}
+
+.tile_content a{
+  color: white;
+}
+
+.tile_stretch {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+}
+
+.hidden_bar {
+  position: absolute;
+  bottom: 1px;
+  background: black;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: white;
+  width: 98%;
+}
+
+.hidden_bar_item {
+  margin-right: 1em;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  padding-top: 0.5px;
+  padding-bottom: 0.5px;
+  width: 10em;
+  background: black;
+  cursor: pointer;
+  float: left;
+  overflow: hidden;
+  text-transform: capitalize;
+  border: solid 1px green;
+}
+
+#close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  text-decoration: none;
+  color: white;
+}
+
+.popup {
+  visibility: hidden;
+  position: absolute; 
+  top: 7%; 
+  left: 50%;
+  min-height: 15em; 
+  width: 50em; 
+  margin-left: -25em; 
+  border: solid 2px green;
+  background-color: black;
+  padding: 1em; 
+  z-index: 100;
+}
+
+.entropy {
+  color: gray;
+}
+
+input[type=text], textarea, input[type=password] {
+  border: 1px;
+  background-color:black; 
+  color:white; 
+  border-style:dotted;
+  resize: none; 
+}
+
+
+a {
+  color: white;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: monospace;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  padding-right: 10px;
+  visibility: visible;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  padding-right: 10px;
+  visibility: visible;
+
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: green;
+  padding-right: 10px;
+  visibility: visible;
+}

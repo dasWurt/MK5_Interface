@@ -1,0 +1,34 @@
+#!/bin/bash
+
+dest=$1
+name=$2
+version=$3
+infusionType=$4
+
+if [[ $dest == "internal" ]]
+  then
+  touch /tmp/infusions/installing
+  tar -xzf /tmp/infusions/$name-$version.tar.gz -C /tmp/infusions/
+  if [[ $infusionType == "sys" ]]
+    then
+    rm -rf /pineapple/components/system/$name
+    mv /tmp/infusions/$name /pineapple/components/system/
+  else
+    rm -rf /pineapple/components/infusions/$name
+    mv /tmp/infusions/$name /pineapple/components/infusions/
+  fi
+  rm /tmp/infusions/installing
+  rm -rf /tmp/infusions
+else
+  touch /sd/tmp/infusions/installing
+  mkdir -p /sd/infusions
+  
+  tar -xzf /sd/tmp/infusions/$name-$version.tar.gz -C /sd/tmp/infusions/
+  rm -rf /pineapple/components/infusions/$name
+  rm -rf /sd/infusions/$name
+  mv /sd/tmp/infusions/$name /sd/infusions/
+  ln -s /sd/infusions/$name /pineapple/components/infusions/$name
+  
+  rm /sd/tmp/infusions/installing
+  rm -rf /sd/tmp/infusions
+fi

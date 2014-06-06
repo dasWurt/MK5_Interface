@@ -1,0 +1,5 @@
+#!/bin/bash
+touch /tmp/downloading_upgrade
+rm -rf /tmp/upgrade.bin
+wget -O /tmp/upgrade.bin "http://wifipineapple.com/?downloads&mk5_download&stable"
+rm /tmp/downloading_upgrade

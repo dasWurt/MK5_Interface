@@ -1,0 +1,18 @@
+#!/bin/bash
+
+dest=$1
+name=$2
+version=$3
+
+if [[ $dest == "internal" ]]
+  then
+  mkdir -p /tmp/infusions
+  touch /tmp/infusions/downloading
+  wget "http://wifipineapple.com/mk5_infusions?infusion=$name-$version" -O /tmp/infusions/$name-$version.tar.gz
+  rm /tmp/infusions/downloading
+else
+  mkdir -p /sd/tmp/infusions
+  touch /sd/tmp/infusions/downloading
+  wget "http://wifipineapple.com/mk5_infusions?infusion=$name-$version" -O /sd/tmp/infusions/$name-$version.tar.gz
+  rm /sd/tmp/infusions/downloading
+fi

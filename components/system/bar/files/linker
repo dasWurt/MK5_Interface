@@ -1,0 +1,14 @@
+#!/bin/bash
+FILES=/sd/infusions/*
+
+touch /tmp/infusion_linker_lock
+for f in $FILES
+do
+  f=$(basename $f)
+  [[ ! -e /pineapple/components/infusions/$f && "$f" != "*" ]] && {
+    touch /tmp/infusion_linker_found
+    ln -s /sd/infusions/$f /pineapple/components/infusions/$f
+  }
+done
+rm /tmp/infusion_linker_lock
+touch /tmp/completed
