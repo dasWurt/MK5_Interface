@@ -9,6 +9,6 @@ Pull requests that do not get approved may be reimplemented with credit given in
 
 There are a few development guidelines that should be followed:
   - Naming conventions must be underscores and not CamelCase.
-  - Tabs must be converted to 4 spaces.
+  - Tabs must be converted to 2 spaces.
   - Credit should not be given in the code but in the pull request.
   - Large re-writes should be discussed beforehand on the forums to avoid undoing the work of others.
