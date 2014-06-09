@@ -65,7 +65,7 @@ function install_package($package_or_array, $destination="internal"){
 function check_package($package_or_array){
   $installed = true;
   if(is_array($package_or_array)){
-    foreach($package_or_array as $array){
+    foreach($package_or_array as $package){
       if(trim(exec("opkg list-installed | awk '{print $1}' | grep -w '^".$package."$'")) == ""){
         $installed = false;
       }
